@@ -37,21 +37,14 @@ class GoogleSheets:
         response = request.execute()
         return response["values"] if "values" in response else []
 
-    def get_id_cards_by_campus(self, campus: str) -> pd.DataFrame:
-        sheet_name = f"Cards - {campus}"
-        results = self.get_data_by_worksheet_name(sheet_name, "A2:A")
-        output = [result[0] for result in results]
-        return pd.DataFrame(output)
-
     def clear_worksheet(self, sheet_name: str) -> None:
         request = self._service.spreadsheets().values().clear(spreadsheetId=self._sheet_id, range=sheet_name, body={})
         request.execute()
 
-    def write_student_data_by_group(self, group_name: str, student_data: pd.DataFrame) -> None:
-        sheet_name = f"Student List - {group_name}"
-        self.clear_worksheet(sheet_name)
-        the_range = f"{sheet_name}!A1:A"
-        the_values = parse_dataframe(student_data)
+    def write_data_to_worksheet(self, worksheet_name: str, data: pd.DataFrame) -> None:
+        self.clear_worksheet(worksheet_name)
+        the_range = f"{worksheet_name}!A1:A"
+        the_values = parse_dataframe(data)
         body = {
             "range": the_range,
             "values": the_values
@@ -60,4 +53,3 @@ class GoogleSheets:
                                                                valueInputOption=self._value_input_option,
                                                                insertDataOption=self._insert_data_option, body=body)
         request.execute()
-        print(f"Wrote student data to {sheet_name}")
