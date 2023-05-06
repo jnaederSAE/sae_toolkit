@@ -8,5 +8,8 @@ setup(
     author_email='j.naeder@sae.edu',
     url='https://github.com/yourusername/your_package_name',
     packages=find_packages(),
-    install_requires=[]
+    install_requires=[
+        "pymssql==2.2.7",
+        "python-dotenv==1.0.0"
+    ]
 )
