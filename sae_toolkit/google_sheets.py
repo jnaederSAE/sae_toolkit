@@ -47,9 +47,9 @@ class GoogleSheets:
 
     def __init__(self, credential_file) -> None:
         self._scopes = ['https://www.googleapis.com/auth/spreadsheets']
-        self.current_file = os.path.abspath(__file__)
-        self.current_dir = os.path.dirname(self.current_file)
-        self._account_file = os.path.join(self.current_dir, credential_file)
+        self._current_file = os.path.abspath(__file__)
+        self._current_dir = os.path.dirname(self._current_file)
+        self._account_file = os.path.join(self._current_dir, credential_file)
         self._creds = service_account.Credentials.from_service_account_file(self._account_file, scopes=self._scopes)
         self._service = build('sheets', 'v4', credentials=self._creds)
 
