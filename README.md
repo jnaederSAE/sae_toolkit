@@ -7,6 +7,8 @@ A collection of useful code for SAE projects.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Documentation](#documentation)
+  - [Database](#database)
+  - [Google Sheets](#google-sheets)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -25,6 +27,14 @@ Explain how to use your code and provide examples of input and output. You might
 ## Documentation
 
 Provide any additional documentation for your code, such as API documentation or user guides.
+
+### Database
+
+The database module provides a wrapper for the sqlite3 module. It provides a simple interface for creating, reading, updating, and deleting data from a database.
+
+### Google Sheets
+
+The google_sheets module provides a wrapper for the gspread module. It provides a simple interface for reading and writing data to a Google Sheet.
 
 ## Contributing
 
