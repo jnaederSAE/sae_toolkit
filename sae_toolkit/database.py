@@ -17,6 +17,7 @@ class Database:
                  user=DB_USER,
                  pw=DB_PW,
                  db=DB_NAME):
+        self.cur = None
         self.host = host
         self.user = user
         self.pw = pw
