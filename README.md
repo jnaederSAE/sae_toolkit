@@ -1,4 +1,5 @@
 # SAE Toolkit
+<img src="./imgs/new_logo_white.png" alt="Example Image" width="200">
 
 A collection of useful code for SAE projects.
 
@@ -29,9 +30,15 @@ Explain how to use your code and provide examples of input and output. You might
 
 Provide any additional documentation for your code, such as API documentation or user guides.
 
-### Database
 
-The database module provides a wrapper for the sqlite3 module. It provides a simple interface for creating, reading, updating, and deleting data from a database.
+### Database
+The database module provides a wrapper for the pymssql package.
+
+#### <span style="color:#0077AA">Creating An Instance</span>
+```python
+new_database = Database(host, user, pw, db)
+```
+
 
 ### Google Sheets
 
