@@ -18,8 +18,9 @@ A collection of useful code for SAE projects.
 
 Use pip with git+ to install this package.
 
-`pip install git+https://github.com/jnaederSAE/sae_toolkit`
-
+```bash
+pip install git+https://github.com/jnaederSAE/sae_toolkit
+```
 ## Usage
 
 Explain how to use your code and provide examples of input and output. You might also include screenshots or GIFs to help illustrate your examples.
